@@ -26,7 +26,7 @@
 
   <ItemGroup>
     <Reference Include="RazorPagesTestSample">
-      <HintPath>..\..\src\RazorPagesTestSample\bin\Debug\net6.0\RazorPagesTestSample.dll</HintPath>
+      <HintPath>..\..\src\RazorPagesTestSample\bin\Debug\net8.0\RazorPagesTestSample.dll</HintPath>
     </Reference>
   </ItemGroup>
 
