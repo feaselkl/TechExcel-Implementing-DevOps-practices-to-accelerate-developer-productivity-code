@@ -77,6 +77,12 @@ jobs:
           app-name: 'mtw2nduyacveg-dev'
           images: mtw2nduyacvegmpnpreg.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
 
+      - name: Docker Build
+        run: docker build -t $registryName/$repositoryName:$tag --build-arg build_version=$tag $dockerFolderPath
+      
+      - name: Docker Push
+        run: docker push $registryName/$repositoryName:$tag
+
   deploy-to-test:
   
     runs-on: ubuntu-latest
@@ -118,8 +124,3 @@ jobs:
       with:
         app-name: 'mtw2nduyacveg-prod'
         images: mtw2nduyacvegmpnpreg.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
-    - name: Docker Build
-      run: docker build -t $registryName/$repositoryName:$tag --build-arg build_version=$tag $dockerFolderPath
-      
-    - name: Docker Push
-      run: docker push $registryName/$repositoryName:$tag
