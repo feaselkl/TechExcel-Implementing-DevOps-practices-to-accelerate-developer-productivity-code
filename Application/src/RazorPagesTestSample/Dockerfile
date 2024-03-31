@@ -14,4 +14,4 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 EXPOSE 8080
 COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "RazorPagesTestSample.dll"]
+ENTRYPOINT ["dotnet", "RazorPagesTestSample.dll", "--urls", "http://0.0.0.0:8080"]
